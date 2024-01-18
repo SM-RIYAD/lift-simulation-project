@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        /* text-align: center; */
+      }
+
+      .elevator {
+        width: 80%;
+        height: 100%;
+        background-color: wheat;
+        /* position: absolute; */
+        /* bottom: 0; */
+
+        border: 5px solid black;
+        padding: 10px;
+        position: relative;
+      }
+
+      .button-class{
+        width: 20%;
+        height: 100%;
+        background-color: wheat;
+        border: 5px solid red;
+      }
+
+
+      .home {
+        display: flex;
+        border: 5px solid blue;
+        justify-content: center;
+        width: 100vh;
+        height: 100vh;
+        margin-left: 20%;
+        padding: 50px;
+      }
+      .box-style {
+        border: 1px solid black;
+        height: 32%;
+      }
+
+      .button-box{
+        border: 1px solid black;
+        height: 32%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+      }
+      .level-box {
+        border: 1px solid black;
+        width: 100px;
+        height: 50px;
+        margin-inline: auto;
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+      }
+      .arrow-btn{
+
+        margin:5px;
+      }
+      .movable-lift {
+        border: 5px solid black;
+
+        width: 80%;
+        height: 50px;
+        margin-inline: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="home">
+        <div class="button-class">
+            <div class="button-box">
+                <button class="arrow-btn">Down</button>
+
+            </div>
+            <div class="button-box">
+                <button class="arrow-btn">UP</button>
+                <button class="arrow-btn">Down</button>
+
+            </div>
+            <div class="button-box">
+
+
+                <button class="arrow-btn">Up</button>
+            </div>
+            
+        </div>
+      <div class="elevator" id="elevator">
+        <div class="box-style">
+          <div class="level-box">Level 2</div>
+        </div>
+        <div class="box-style">
+          <div class="level-box">Level 1</div>
+        </div>
+        <div class="box-style">
+          <div class="level-box">Level 0</div>
+       
+          <!-- <div class="movable-lift">
+
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <script></script>
+  </body>
+</html>
