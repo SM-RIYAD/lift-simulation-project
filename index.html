@@ -137,7 +137,7 @@
             current = 2;
             console.log("current by up from ground: " + current);
           }, 5000);
-          targetPosition = +545; // Move to Level 2
+          targetPosition = +645; // Move to Level 2
         }
 
         elevator.style.bottom = targetPosition + "px";
@@ -147,7 +147,7 @@
         var targetPosition = 0;
 
         if (destination === 1 && current === 0) {
-          targetPosition = +350; // stay to Level 1
+          targetPosition = +450; // stay to Level 1
           current = 1;
         }
 
@@ -158,11 +158,11 @@
       function moveBydownfrom1stfloor(destination) {
         var targetPosition = 0;
         if (destination === 2 && current === 0) {
-          targetPosition = +545; // Move to Level 2
+          targetPosition = +645; // Move to Level 2
           current = 2;
         }
         if (destination === 2 && current === 2) {
-          targetPosition = +350; // Move to Level 1
+          targetPosition = +450; // Move to Level 1
           current = 1;
         }
 
