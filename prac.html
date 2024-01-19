@@ -72,14 +72,22 @@
     <div class="home">
       <div class="button-class">
         <div class="button-box">
-          <button class="arrow-btn" onclick="moveElevator(0)">Down</button>
+          <button class="arrow-btn" onclick="moveBydownfrom2ndfloor(0)">
+            Down
+          </button>
         </div>
         <div class="button-box">
-          <button class="arrow-btn" onclick="moveElevator(1)">UP</button>
-          <button class="arrow-btn" onclick="moveElevator(2)">Down</button>
+          <button class="arrow-btn" onclick="moveByupfrom1stfloor(1)">
+            UP
+          </button>
+          <button class="arrow-btn" onclick="moveBydownfrom1stfloor(2)">
+            Down
+          </button>
         </div>
         <div class="button-box">
-          <button class="arrow-btn" onclick="moveElevator(2)">Up</button>
+          <button class="arrow-btn" onclick="moveByUpfromGroundfloor(2)">
+            Up
+          </button>
         </div>
       </div>
       <div class="elevator-area" id="elevator-area">
@@ -97,25 +105,73 @@
     </div>
 
     <script>
-        var current=0;
-      function moveElevator(destination) {
-        var elevator = document.getElementById('elevator');
+      function Current(value) {
+        current = value;
+ ;
+}
+      var current = 0;
+      var elevator = document.getElementById("elevator");
+      function moveByUpfromGroundfloor(destination) {
+        var targetPosition = 0;
+        if (destination === 2 && current === 0) {
+          setTimeout(function() {
+            current = 2;
+            console.log("current by up from ground: " + current)
+}, 5000);
+          targetPosition = +545; // Move to Level 2
+
+
+        }
+
+        elevator.style.bottom = targetPosition + "px";
+      }
+
+
+      function moveByupfrom1stfloor(destination) {
         var targetPosition = 0;
 
-        if (destination === 1 && current===2) {
-          targetPosition = +350; // Move to Level 1
-          current=1;
-        } else if (destination === 2 ) {
-          targetPosition = +545; // Move to Level 2
-          current=2;
+        if (destination === 1 && current === 0) {
+          targetPosition = +350; // stay to Level 1
+          current = 1;
         }
-        else if (destination === 0 && current===2) {
-          targetPosition = +145; // Move to Level 0
-          current=0;
-        }
-      
-        elevator.style.bottom = targetPosition + 'px';
+        // if (destination === 1 && current === 2) {
+        //   targetPosition = +145; // stay to Level 1
+        //   current = 0;
+        // }
+        // if (destination === 1 && current === 1) {
+        //   targetPosition = +545; // stay to Level 1
+        //   current = 2;
+        // }
+        console.log("current: " + current)
+        elevator.style.bottom = targetPosition + "px";
       }
+
+      function moveBydownfrom1stfloor(destination) {
+        var targetPosition = 0;
+        if (destination === 2 && current === 0) {
+          targetPosition = +545; // Move to Level 2
+          current = 1;
+        }
+        if (destination === 2 && current === 2) {
+          targetPosition = +350; // Move to Level 2
+          current = 1;
+        }
+
+
+        elevator.style.bottom = targetPosition + "px";
+      }
+      function moveBydownfrom2ndfloor(destination) {
+        var targetPosition = 0;
+        if (destination === 0 && current === 2) {
+          targetPosition = +145; // Move to Level 2
+          setTimeout(function() {
+            current = 0;
+}, 5000);
+        }
+
+        elevator.style.bottom = targetPosition + "px";
+      }
+
     </script>
   </body>
 </html>
